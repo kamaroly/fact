@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :fact, Fact.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "",
   hostname: "localhost",
   database: "fact_dev",
   stacktrace: true,
