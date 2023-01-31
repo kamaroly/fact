@@ -1,0 +1,32 @@
+<h1>Listing Suppliers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Names</th>
+      <th>Email</th>
+      <th>Mobile number</th>
+      <th>Address</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for supplier <- @suppliers do %>
+    <tr>
+      <td><%= supplier.names %></td>
+      <td><%= supplier.email %></td>
+      <td><%= supplier.mobile_number %></td>
+      <td><%= supplier.address %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.supplier_path(@conn, :show, supplier) %></span>
+        <span><%= link "Edit", to: Routes.supplier_path(@conn, :edit, supplier) %></span>
+        <span><%= link "Delete", to: Routes.supplier_path(@conn, :delete, supplier), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Supplier", to: Routes.supplier_path(@conn, :new) %></span>

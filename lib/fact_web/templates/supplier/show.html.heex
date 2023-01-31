@@ -1,0 +1,28 @@
+<h1>Show Supplier</h1>
+
+<ul>
+
+  <li>
+    <strong>Names:</strong>
+    <%= @supplier.names %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @supplier.email %>
+  </li>
+
+  <li>
+    <strong>Mobile number:</strong>
+    <%= @supplier.mobile_number %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @supplier.address %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.supplier_path(@conn, :edit, @supplier) %></span> |
+<span><%= link "Back", to: Routes.supplier_path(@conn, :index) %></span>
